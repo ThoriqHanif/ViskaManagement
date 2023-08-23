@@ -3,10 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\BloodGroup;
-<<<<<<< HEAD
 use App\Models\GolDarah;
-=======
->>>>>>> 674fd73de2d4496258fdd23ab8290a77d86f1f0d
 use App\Models\StaffRecord;
 use App\Models\UserType;
 use App\User;
@@ -74,10 +71,6 @@ class UserRepo {
     /********** BLOOD GROUPS ********/
     public function getBloodGroups()
     {
-<<<<<<< HEAD
         return GolDarah::orderBy('name')->get();
-=======
-        return BloodGroup::orderBy('name')->get();
->>>>>>> 674fd73de2d4496258fdd23ab8290a77d86f1f0d
     }
 }
