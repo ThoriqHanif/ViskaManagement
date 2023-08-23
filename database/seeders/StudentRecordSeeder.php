@@ -21,9 +21,9 @@ class StudentRecordSeeder extends Seeder
     }
     protected function createManyStudentRecords(int $count)
     {
-        // $sections = Section::all();
+        $sections = Section::all();
 
-        // foreach ($sections as $section){
+        foreach ($sections as $section){
           User::factory()
                 ->has(
                     StudentRecord::factory()
@@ -38,7 +38,7 @@ class StudentRecordSeeder extends Seeder
                     'user_type' => 'student',
                     'password' => Hash::make('student'),
                 ]);
-        // }
+        }
 
     }
 

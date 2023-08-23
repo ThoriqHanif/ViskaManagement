@@ -26,7 +26,7 @@ class Qs
 
     public static function getAppCode()
     {
-        return self::getSetting('system_title') ?: 'CJ';
+        return self::getSetting('system_title') ?: 'VISKAMENT';
     }
 
     public static function getDefaultUserImage()
@@ -60,12 +60,12 @@ class Qs
 
     public static function getTeamAccount()
     {
-        return ['admin', 'super_admin', 'accountant'];
+        return ['admin', 'super_admin', 'akuntan'];
     }
 
     public static function getTeamSAT()
     {
-        return ['admin', 'super_admin', 'teacher'];
+        return ['admin', 'super_admin', 'guru'];
     }
 
     public static function getTeamAcademic()
@@ -75,12 +75,12 @@ class Qs
 
     public static function getTeamAdministrative()
     {
-        return ['admin', 'super_admin', 'accountant'];
+        return ['admin', 'super_admin', 'akuntan'];
     }
 
     public static function hash($id)
     {
-        $date = date('dMY').'CJ';
+        $date = date('dMY').'VISKAMENT';
         $hash = new Hashids($date, 14);
         return $hash->encode($id);
     }
@@ -162,12 +162,12 @@ class Qs
 
     public static function userIsTeacher()
     {
-        return Auth::user()->user_type == 'teacher';
+        return Auth::user()->user_type == 'guru';
     }
 
     public static function userIsParent()
     {
-        return Auth::user()->user_type == 'parent';
+        return Auth::user()->user_type == 'ortu';
     }
 
     public static function userIsStaff()
@@ -177,13 +177,13 @@ class Qs
 
     public static function getStaff($remove=[])
     {
-        $data =  ['super_admin', 'admin', 'teacher', 'accountant', 'librarian'];
+        $data =  ['super_admin', 'admin', 'guru', 'akuntan', 'librarian'];
         return $remove ? array_values(array_diff($data, $remove)) : $data;
     }
 
     public static function getAllUserTypes($remove=[])
     {
-        $data =  ['super_admin', 'admin', 'teacher', 'accountant', 'librarian', 'student', 'parent'];
+        $data =  ['super_admin', 'admin', 'guru', 'akuntan', 'librarian', 'student', 'ortu'];
         return $remove ? array_values(array_diff($data, $remove)) : $data;
     }
 
@@ -211,7 +211,7 @@ class Qs
 
     public static function getPTA()
     {
-        return ['super_admin', 'admin', 'teacher', 'parent'];
+        return ['super_admin', 'admin', 'guru', 'ortu'];
     }
 
     /*public static function filesToUpload($programme)
