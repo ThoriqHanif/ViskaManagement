@@ -296,7 +296,7 @@ class Qs
     public static function getMarkType($class_type)
     {
        switch($class_type){
-           case 'J' : return 'junior';
+           case '' : return 'junior';
            case 'S' : return 'senior';
            case 'N' : return 'nursery';
            case 'P' : return 'primary';
