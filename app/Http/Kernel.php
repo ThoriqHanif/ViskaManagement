@@ -54,6 +54,16 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
+        // 'auth' => \App\Http\Middleware\Authenticate::class,
+        // 'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        // 'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        // 'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        // 'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        // 'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
+        // 'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
+        // 'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        // 'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
@@ -63,5 +73,12 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'admin' => \App\Http\Middleware\Custom\Admin::class,
+        'super_admin' => \App\Http\Middleware\Custom\SuperAdmin::class,
+        'teamSA' => \App\Http\Middleware\Custom\TeamSA::class,
+        'teamSAT' => \App\Http\Middleware\Custom\TeamSAT::class,
+        'teamAccount' => \App\Http\Middleware\Custom\TeamAccount::class,
+        'examIsLocked' => \App\Http\Middleware\Custom\ExamIsLocked::class,
+        'my_parent' => \App\Http\Middleware\Custom\MyParent::class,
     ];
 }
