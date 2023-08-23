@@ -16187,6 +16187,31 @@
      
 }
 
+    namespace App\Helpers { 
+            /**
+     * 
+     *
+     */ 
+        class Qs {
+         
+    }
+            /**
+     * 
+     *
+     */ 
+        class Mk {
+         
+    }
+            /**
+     * 
+     *
+     */ 
+        class Pay {
+         
+    }
+     
+}
+
     namespace Facade\Ignition\Facades { 
             /**
      * Class Flare.
@@ -20077,6 +20102,9 @@ namespace  {
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
             class PDF extends \Barryvdh\DomPDF\Facade {}
+            class Qs extends \App\Helpers\Qs {}
+            class Mk extends \App\Helpers\Mk {}
+            class Pay extends \App\Helpers\Pay {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
      
 }

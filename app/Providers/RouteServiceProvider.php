@@ -60,4 +60,6 @@ class RouteServiceProvider extends ServiceProvider
             return Limit::perMinute(60);
         });
     }
+
+    protected $namespace = 'App\Http\Controllers';
 }
