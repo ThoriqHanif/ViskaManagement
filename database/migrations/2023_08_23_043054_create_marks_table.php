@@ -18,7 +18,6 @@ class CreateMarksTable extends Migration
             $table->unsignedInteger('student_id');
             $table->unsignedInteger('subject_id');
             $table->unsignedInteger('my_class_id');
-            $table->unsignedInteger('section_id');
             $table->unsignedInteger('exam_id');
             $table->integer('t1')->nullable();
             $table->integer('t2')->nullable();
@@ -32,7 +31,7 @@ class CreateMarksTable extends Migration
             $table->tinyInteger('sub_pos')->nullable();
             $table->integer('cum')->nullable();
             $table->string('cum_ave')->nullable();
-            $table->unsignedInteger('grade_id')->nullable();
+            $table->unsignedInteger('nilai_id')->nullable();
             $table->string('year');
             $table->timestamps();
         });

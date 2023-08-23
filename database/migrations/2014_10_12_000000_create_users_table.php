@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 use App\Helpers\Qs;
 
 class CreateUsersTable extends Migration
@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 100)->nullable()->unique();
             $table->string('user_type');
             $table->string('gender')->nullable();
-            $table->string('photo')->default(Qs::getDefaultUserImage());
+            // $table->string('photo')->default(Qs::getDefaultUserImage());
             $table->string('phone')->nullable();
             $table->string('phone2')->nullable();
             $table->unsignedInteger('gol_darah_id')->nullable();

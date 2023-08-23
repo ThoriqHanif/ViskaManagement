@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class GolDarah extends Model
 {
-    use HasFactory;
+    protected $table = 'gol_darah';
 }

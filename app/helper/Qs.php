@@ -109,7 +109,7 @@ class Qs
 
     public static function decodeHash($str, $toString = true)
     {
-        $date = date('dMY').'CJ';
+        $date = date('dMY').'VISKA';
         $hash = new Hashids($date, 14);
         $decoded = $hash->decode($str);
         return $toString ? implode(',', $decoded) : $decoded;
