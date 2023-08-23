@@ -70,7 +70,7 @@ class Qs
 
     public static function getTeamAcademic()
     {
-        return ['admin', 'super_admin', 'teacher', 'student'];
+        return ['admin', 'super_admin', 'guru', 'student'];
     }
 
     public static function getTeamAdministrative()

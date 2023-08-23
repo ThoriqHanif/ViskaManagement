@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 100)->nullable()->unique();
             $table->string('user_type');
             $table->string('gender')->nullable();
-            // $table->string('photo')->default(Qs::getDefaultUserImage());
+            $table->string('photo')->default(Qs::getDefaultUserImage());
             $table->string('phone')->nullable();
             $table->string('phone2')->nullable();
             $table->unsignedInteger('gol_darah_id')->nullable();
