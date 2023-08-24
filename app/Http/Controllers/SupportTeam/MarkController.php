@@ -34,7 +34,7 @@ class MarkController extends Controller
     {
         $d['exams'] = $this->exam->getExam(['year' => $this->year]);
         $d['my_classes'] = $this->my_class->all();
-        $d['sections'] = $this->my_class->getAllSections();
+        // $d['sections'] = $this->my_class->getAllSections();
         $d['subjects'] = $this->my_class->getAllSubjects();
         $d['selected'] = false;
 

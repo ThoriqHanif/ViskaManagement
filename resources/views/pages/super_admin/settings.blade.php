@@ -87,7 +87,7 @@
                 </div>
                 <div class="col-md-6">
                     {{--Fees--}}
-               <fieldset>
+               {{-- <fieldset>
                    <legend><strong>Next Term Fees</strong></legend>
                    @foreach($class_types as $ct)
                    <div class="form-group row">
@@ -98,7 +98,7 @@
                    </div>
                        @endforeach
                </fieldset>
-                    <hr class="divider">
+                    <hr class="divider"> --}}
 
                     {{--Logo--}}
                     <div class="form-group row">
