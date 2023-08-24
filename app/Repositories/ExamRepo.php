@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
+use App\Models\Ekstra;
 use App\Models\Exam;
 use App\Models\ExamRecord;
-use App\Models\Grade;
+use App\Models\Nilai;
 use App\Models\Mark;
-use App\Models\Skill;
 
 class ExamRepo
 {
@@ -65,32 +65,32 @@ class ExamRepo
 
     public function allGrades()
     {
-        return Grade::orderBy('name')->get();
+        return Nilai::orderBy('name')->get();
     }
 
     public function getGrade($data)
     {
-        return Grade::where($data)->get();
+        return Nilai::where($data)->get();
     }
 
     public function findGrade($id)
     {
-        return Grade::find($id);
+        return Nilai::find($id);
     }
 
     public function createGrade($data)
     {
-        return Grade::create($data);
+        return Nilai::create($data);
     }
 
     public function updateGrade($id, $data)
     {
-        return Grade::find($id)->update($data);
+        return Nilai::find($id)->update($data);
     }
 
     public function deleteGrade($id)
     {
-        return Grade::destroy($id);
+        return Nilai::destroy($id);
     }
 
     /*********** Marks ***************/
@@ -124,7 +124,7 @@ class ExamRepo
 
     public function getSkill($where)
     {
-        return Skill::where($where)->orderBy('name')->get();
+        return Ekstra::where($where)->orderBy('name')->get();
     }
 
     public function getSkillByClassType($class_type = NULL, $skill_type = NULL)
