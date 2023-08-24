@@ -24,6 +24,6 @@ class NilaiSeeder extends Seeder
 
 
         ];
-        DB::table('grades')->insert($d);
+        DB::table('nilai')->insert($d);
     }
 }

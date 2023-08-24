@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MyClass extends Model
 {
+    protected $table = 'my_classes';
     protected $fillable = ['name', 'class_type_id'];
 
     public function section()
