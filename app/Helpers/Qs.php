@@ -318,27 +318,27 @@ class Qs
 
     public static function jsonStoreOk()
     {
-        return self::json(__('msg.store_ok'));
+        return self::json(__('Berhasil Menyimpan Data'));
     }
 
     public static function jsonUpdateOk()
     {
-        return self::json(__('msg.update_ok'));
+        return self::json(__('Berhasil Memperbaharui Data'));
     }
 
     public static function storeOk($routeName)
     {
-        return self::goWithSuccess($routeName, __('msg.store_ok'));
+        return self::goWithSuccess($routeName, __('Berhasil Menyimpan Data'));
     }
 
     public static function deleteOk($routeName)
     {
-        return self::goWithSuccess($routeName, __('msg.del_ok'));
+        return self::goWithSuccess($routeName, __('Berhasil Menghapus Data'));
     }
 
     public static function updateOk($routeName)
     {
-        return self::goWithSuccess($routeName, __('msg.update_ok'));
+        return self::goWithSuccess($routeName, __('Berhasil Menyimpan Data'));
     }
 
     public static function goToRoute($goto, $status = 302, $headers = [], $secure = null)
