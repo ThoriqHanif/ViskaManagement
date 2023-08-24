@@ -27,7 +27,7 @@ class TimeTableController extends Controller
 
     public function index()
     {
-        $d['exams'] = $this->exam->getExam(['year' => $this->year]);
+        $d['exam'] = $this->exam->getExam(['year' => $this->year]);
         $d['my_classes'] = $this->my_class->all();
         $d['tt_records'] = $this->tt->getAllRecords();
 
