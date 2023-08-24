@@ -24,23 +24,24 @@ class StudentRecordSeeder extends Seeder
     {
         $myclass = MyClass::all();
 
-        foreach ($myclass as $myclass){
-          UserTable::factory()
+        foreach ($myclass as $myclass) {
+            UserTable::factory()
                 ->has(
                     StudentRecord::factory()
-                    ->state([
-                    'my_class_id' => $myclass->id,
-                    'user_id' => function(UserTable $user){
-                        return ['user_id' => $user->id];
-                    },
-                ]), 'student_record')
+                        ->state([
+                            'my_class_id' => $myclass->id,
+                            'user_id' => function (UserTable $user) {
+                                return ['user_id' => $user->id];
+                            },
+                        ]),
+                    'student_record'
+                )
                 ->count($count)
                 ->create([
                     'user_type' => 'student',
                     'password' => Hash::make('student'),
                 ]);
         }
-
     }
 
     protected function createStudentRecord()

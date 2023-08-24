@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Models\Grade;
 use App\Models\Mark;
+use App\Models\Nilai;
 use App\Models\StudentRecord;
 
 class MarkRepo
@@ -12,7 +12,7 @@ class MarkRepo
     {
         if($total < 1) { return NULL; }
 
-        $grades = Grade::where(['class_type_id' => $class_type_id])->get();
+        $grades = Nilai::where(['class_type_id' => $class_type_id])->get();
 
         if($grades->count() > 0){
             $gr = $grades->where('mark_from', '<=', $total)->where('mark_to', '>=', $total);
@@ -23,7 +23,7 @@ class MarkRepo
 
     public function getGrade2($total)
     {
-        $grades = Grade::whereNull('class_type_id')->get();
+        $grades = Nilai::whereNull('class_type_id')->get();
         if($grades->count() > 0){
             return $grades->where('mark_from', '<=', $total)->where('mark_to', '>=', $total)->first();
         }
@@ -56,9 +56,9 @@ class MarkRepo
         return $t1 + $t2 + $t3;*/
     }
 
-    public function getExamAvgTerm($exam, $st_id, $class_id, $sec_id, $year)
+    public function getExamAvgTerm($exam, $st_id, $class_id, $year)
     {
-        $d = ['student_id' => $st_id, 'exam_id' => $exam->id, 'my_class_id' => $class_id, 'section_id' => $sec_id, 'year' => $year];
+        $d = ['student_id' => $st_id, 'exam_id' => $exam->id, 'my_class_id' => $class_id, 'year' => $year];
 
         $tex = 'tex'.$exam->term;
 
@@ -139,9 +139,9 @@ class MarkRepo
         return round($avg, 1);
     }
 
-    public function getPos($st_id, $exam, $class_id, $sec_id, $year)
+    public function getPos($st_id, $exam, $class_id, $year)
     {
-        $d = ['student_id' => $st_id, 'exam_id' => $exam->id, 'my_class_id' => $class_id, 'section_id' => $sec_id, 'year' => $year ]; $all_mks = [];
+        $d = ['student_id' => $st_id, 'exam_id' => $exam->id, 'my_class_id' => $class_id, 'year' => $year ]; $all_mks = [];
         $tex = 'tex'.$exam->term;
 
         $my_mk = Mark::where($d)->select($tex)->sum($tex);
