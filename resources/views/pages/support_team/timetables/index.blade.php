@@ -54,7 +54,7 @@
                                <div class="col-lg-9">
                                    <select class="select form-control" name="exam_id" id="exam_id">
                                        <option value="">Class Timetable</option>
-                                       @foreach($exams as $ex)
+                                       @foreach($exam as $ex)
                                            <option {{ old('exam_id') == $ex->id ? 'selected' : '' }} value="{{ $ex->id }}">{{ $ex->name }}</option>
                                        @endforeach
                                    </select>
