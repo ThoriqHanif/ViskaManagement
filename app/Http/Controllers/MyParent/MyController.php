@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\MyParent;
+
 use App\Http\Controllers\Controller;
 use App\Repositories\StudentRepo;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,6 @@ class MyController extends Controller
     {
         $data['students'] = $this->student->getRecord(['my_parent_id' => Auth::user()->id])->with(['my_class', 'section'])->get();
 
-        return view('pages.parent.children', $data);
+        return view('pages.ortu.children', $data);
     }
-
 }

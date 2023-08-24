@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 use App\Models\ClassType;
 use App\Models\MyClass;
-use App\Models\Section;
 use App\Models\Subject;
 
 class MyClassRepo
@@ -59,37 +58,37 @@ class MyClassRepo
 
     public function createSection($data)
     {
-        return Section::create($data);
+        // return Section::create($data);
     }
 
     public function findSection($id)
     {
-        return Section::find($id);
+        // return Section::find($id);
     }
 
     public function updateSection($id, $data)
     {
-        return Section::find($id)->update($data);
+        // return Section::find($id)->update($data);
     }
 
     public function deleteSection($id)
     {
-        return Section::destroy($id);
+        // return Section::destroy($id);
     }
 
     public function isActiveSection($section_id)
     {
-        return Section::where(['id' => $section_id, 'active' => 1])->exists();
+        // return Section::where(['id' => $section_id, 'active' => 1])->exists();
     }
 
     public function getAllSections()
     {
-        return Section::orderBy('name', 'asc')->with(['my_class', 'teacher'])->get();
+        // return Section::orderBy('name', 'asc')->with(['my_class', 'teacher'])->get();
     }
 
     public function getClassSections($class_id)
     {
-        return Section::where(['my_class_id' => $class_id])->orderBy('name', 'asc')->get();
+        // return Section::where(['my_class_id' => $class_id])->orderBy('name', 'asc')->get();
     }
 
     /************* Subject *******************/
@@ -106,12 +105,12 @@ class MyClassRepo
 
     public function findSubjectByClass($class_id, $order_by = 'name')
     {
-        return $this->getSubject(['my_class_id'=> $class_id])->orderBy($order_by)->get();
+        return $this->getSubject(['my_class_id' => $class_id])->orderBy($order_by)->get();
     }
 
     public function findSubjectByTeacher($teacher_id, $order_by = 'name')
     {
-        return $this->getSubject(['teacher_id'=> $teacher_id])->orderBy($order_by)->get();
+        return $this->getSubject(['teacher_id' => $teacher_id])->orderBy($order_by)->get();
     }
 
     public function getSubject($data)
@@ -138,5 +137,4 @@ class MyClassRepo
     {
         return Subject::orderBy('name', 'asc')->with(['my_class', 'teacher'])->get();
     }
-
 }
