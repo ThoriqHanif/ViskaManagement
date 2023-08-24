@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use App\Helpers\Qs;
-use App\Models\Dorm;
 use App\Models\Promotion;
 use App\Models\StudentRecord;
 
@@ -27,7 +26,7 @@ class StudentRepo {
 
     public function allGradStudents()
     {
-        return $this->gradStudents()->with(['my_class', 'section', 'user'])->get()->sortBy('user.name');
+        return $this->gradStudents()->with(['my_class', 'user'])->get()->sortBy('user.name');
     }
 
     public function findStudentsBySection($sec_id)
@@ -73,11 +72,6 @@ class StudentRepo {
     public function getGradRecord($data=[])
     {
         return $this->gradStudents()->where($data)->with('user');
-    }
-
-    public function getAllDorms()
-    {
-        return Dorm::orderBy('name', 'asc')->get();
     }
 
     public function exists($student_id)

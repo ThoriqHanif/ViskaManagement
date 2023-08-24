@@ -16,7 +16,7 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label font-weight-semibold">Title <span class="text-danger">*</span></label>
                             <div class="col-lg-9">
-                                <input name="title" value="{{ old('title') }}" required type="text" class="form-control" placeholder="Eg. School Fees">
+                                <input name="title" value="{{ old('title') }}" required type="text" class="form-control" placeholder="">
                             </div>
                         </div>
 
@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="amount" class="col-lg-3 col-form-label font-weight-semibold">Amount (<del style="text-decoration-style: double">N</del>) <span class="text-danger">*</span></label>
+                            <label for="amount" class="col-lg-3 col-form-label font-weight-semibold">Amount <span class="text-danger">*</span></label>
                             <div class="col-lg-9">
                                 <input class="form-control" value="{{ old('amount') }}" required name="amount" id="amount" type="number">
                             </div>

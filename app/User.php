@@ -2,13 +2,9 @@
 
 namespace App;
 
-use App\Models\BloodGroup;
 use App\Models\GolDarah;
-use App\Models\Lga;
-use App\Models\Nationality;
 use App\Models\Nilai;
 use App\Models\StaffRecord;
-use App\Models\State;
 use App\Models\StudentRecord;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
